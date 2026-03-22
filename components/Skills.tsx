@@ -30,22 +30,25 @@ export function Skills() {
           },
         },
       );
-      gsap.fromTo(
-        cardsRef.current?.children,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
+      const cards = cardsRef.current;
+      if (cards) {
+        gsap.fromTo(
+          cards.children,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: cards,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
           },
-        },
-      );
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
