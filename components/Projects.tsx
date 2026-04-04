@@ -31,22 +31,25 @@ export function Projects() {
           },
         },
       );
-      gsap.fromTo(
-        gridRef.current?.children,
-        { y: 80, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
+      const grid = gridRef.current;
+      if (grid) {
+        gsap.fromTo(
+          grid.children,
+          { y: 80, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: grid,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
           },
-        },
-      );
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
