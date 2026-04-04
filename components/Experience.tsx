@@ -81,13 +81,13 @@ export function Experience() {
                   {exp.period}
                 </span>
               </div>
-              <p className="text-secondary font-body font-medium text-sm mb-2">
+              <p className="text-secondary font-body font-medium text-sm md:text-base mb-2">
                 {exp.company}
               </p>
-              <p className="text-foreground-muted font-body text-sm leading-relaxed mb-4">
+              <p className="text-foreground-muted font-body text-sm md:text-base leading-relaxed mb-4">
                 {exp.description}
               </p>
-              <ul className="list-disc list-inside text-muted text-sm space-y-1">
+              <ul className="list-disc list-inside text-muted text-sm md:text-base space-y-1">
                 {exp.highlights.map((h, i) => (
                   <li key={i}>{h}</li>
                 ))}
